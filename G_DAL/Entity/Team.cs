@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace G_DAL.Entity
 {
-    public class Team
+    public class Team : BaseEntity
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+
     }
 }

@@ -10,12 +10,14 @@ namespace G_DAL
 {
     public class G_ContextDB : DbContext
     {
-        DbSet<Project> Project { get; set; }
-        DbSet<Role> Role { get; set; }
-        DbSet<Stage> Stage { get; set; }
-        DbSet<Status> Status { get; set; }
-        DbSet<Entity.Task> Task { get; set; }
-        DbSet<User> User { get; set; }
-        DbSet<Team> Team { get; set; }
+        public G_ContextDB(DbContextOptions<G_ContextDB> opt) : base(opt) { }
+
+        public DbSet<Project> Project { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<Stage> Stage { get; set; }
+        public DbSet<Status> Status { get; set; }
+        public DbSet<Entity.Task> Task { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<Team> Team { get; set; }
     }
 }
