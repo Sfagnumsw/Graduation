@@ -1,0 +1,12 @@
+C:\Users\n.terentyev\Documents\Graduation\G_DAL\bin\Debug\net6.0\G_DAL.deps.json
+C:\Users\n.terentyev\Documents\Graduation\G_DAL\bin\Debug\net6.0\G_DAL.dll
+C:\Users\n.terentyev\Documents\Graduation\G_DAL\bin\Debug\net6.0\G_DAL.pdb
+C:\Users\n.terentyev\Documents\Graduation\G_DAL\obj\Debug\net6.0\G_DAL.csproj.AssemblyReference.cache
+C:\Users\n.terentyev\Documents\Graduation\G_DAL\obj\Debug\net6.0\G_DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\n.terentyev\Documents\Graduation\G_DAL\obj\Debug\net6.0\G_DAL.AssemblyInfoInputs.cache
+C:\Users\n.terentyev\Documents\Graduation\G_DAL\obj\Debug\net6.0\G_DAL.AssemblyInfo.cs
+C:\Users\n.terentyev\Documents\Graduation\G_DAL\obj\Debug\net6.0\G_DAL.csproj.CoreCompileInputs.cache
+C:\Users\n.terentyev\Documents\Graduation\G_DAL\obj\Debug\net6.0\G_DAL.dll
+C:\Users\n.terentyev\Documents\Graduation\G_DAL\obj\Debug\net6.0\refint\G_DAL.dll
+C:\Users\n.terentyev\Documents\Graduation\G_DAL\obj\Debug\net6.0\G_DAL.pdb
+C:\Users\n.terentyev\Documents\Graduation\G_DAL\obj\Debug\net6.0\ref\G_DAL.dll

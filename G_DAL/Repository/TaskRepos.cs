@@ -18,15 +18,16 @@ namespace G_DAL.Repository
             _contextDB = contextDB;
         }
 
-        public async System.Threading.Tasks.Task Create(G_DAL.Entity.Task obj)
+        public async System.Threading.Tasks.Task<Entity.Task> Create(G_DAL.Entity.Task obj)
         {
-            await _contextDB.Task.AddAsync(obj);
+            var entity = await _contextDB.Task.AddAsync(obj);
             await _contextDB.SaveChangesAsync();
+            return entity.Entity;
         }
 
         public async Task<G_DAL.Entity.Task> Get(int objId)
         {
-            return await _contextDB.Task.FindAsync(objId);
+            return await _contextDB.Task.FirstOrDefaultAsync(i => i.Id == objId);
         }
 
         public async Task<IEnumerable<G_DAL.Entity.Task>> GetAll() => await _contextDB.Task.ToListAsync();
@@ -42,5 +43,4 @@ namespace G_DAL.Repository
             await _contextDB.SaveChangesAsync();
         }
     }
-}
 }

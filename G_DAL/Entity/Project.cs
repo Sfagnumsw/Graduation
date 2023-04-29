@@ -8,7 +8,7 @@ namespace G_DAL.Entity
 {
     public class Project : BaseEntity
     {
-        public Team Team { get; set; }
+        public Team? Team { get; set; }
         public Stage Stage { get; set; }
     }
 }

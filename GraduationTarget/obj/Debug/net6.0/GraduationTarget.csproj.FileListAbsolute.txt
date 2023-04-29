@@ -12,8 +12,6 @@ C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\Grad
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\GraduationTarget.AssemblyInfo.cs
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\GraduationTarget.csproj.CoreCompileInputs.cache
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\GraduationTarget.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\GraduationTarget.RazorAssemblyInfo.cache
-C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\GraduationTarget.RazorAssemblyInfo.cs
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\staticwebassets\msbuild.GraduationTarget.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\staticwebassets\msbuild.build.GraduationTarget.props
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.GraduationTarget.props
@@ -21,11 +19,13 @@ C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\stat
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\scopedcss\bundle\GraduationTarget.styles.css
-C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\scopedcss\projectbundle\GraduationTarget.bundle.scp.css
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\GraduationTarget.dll
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\refint\GraduationTarget.dll
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\GraduationTarget.pdb
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\GraduationTarget.genruntimeconfig.cache
 C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\ref\GraduationTarget.dll
+C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\bin\Debug\net6.0\NLog.dll
+C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+C:\Users\n.terentyev\Documents\Graduation\GraduationTarget\obj\Debug\net6.0\GraduationTarget.csproj.CopyComplete

@@ -17,15 +17,16 @@ namespace G_DAL.Repository
             _contextDB = contextDB;
         }
 
-        public async System.Threading.Tasks.Task Create(Stage obj)
+        public async System.Threading.Tasks.Task<Stage> Create(Stage obj)
         {
-            await _contextDB.Stage.AddAsync(obj);
+            var entity = await _contextDB.Stage.AddAsync(obj);
             await _contextDB.SaveChangesAsync();
+            return entity.Entity;
         }
 
         public async Task<Stage> Get(int objId)
         {
-            return await _contextDB.Stage.FindAsync(objId);
+            return await _contextDB.Stage.FirstOrDefaultAsync(i => i.Id == objId);
         }
 
         public async Task<IEnumerable<Stage>> GetAll() => await _contextDB.Stage.ToListAsync();

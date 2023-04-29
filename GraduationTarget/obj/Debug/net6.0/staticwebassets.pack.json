@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\GraduationTarget.bundle.scp.css",
-      "PackagePath": "staticwebassets\\GraduationTarget.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

@@ -1,0 +1,15 @@
+C:\Users\n.terentyev\Documents\Graduation\G_Service\bin\Debug\net6.0\G_Service.deps.json
+C:\Users\n.terentyev\Documents\Graduation\G_Service\bin\Debug\net6.0\G_Service.dll
+C:\Users\n.terentyev\Documents\Graduation\G_Service\bin\Debug\net6.0\G_Service.pdb
+C:\Users\n.terentyev\Documents\Graduation\G_Service\bin\Debug\net6.0\G_DAL.dll
+C:\Users\n.terentyev\Documents\Graduation\G_Service\bin\Debug\net6.0\G_DAL.pdb
+C:\Users\n.terentyev\Documents\Graduation\G_Service\obj\Debug\net6.0\G_Service.csproj.AssemblyReference.cache
+C:\Users\n.terentyev\Documents\Graduation\G_Service\obj\Debug\net6.0\G_Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\n.terentyev\Documents\Graduation\G_Service\obj\Debug\net6.0\G_Service.AssemblyInfoInputs.cache
+C:\Users\n.terentyev\Documents\Graduation\G_Service\obj\Debug\net6.0\G_Service.AssemblyInfo.cs
+C:\Users\n.terentyev\Documents\Graduation\G_Service\obj\Debug\net6.0\G_Service.csproj.CoreCompileInputs.cache
+C:\Users\n.terentyev\Documents\Graduation\G_Service\obj\Debug\net6.0\G_Service.csproj.CopyComplete
+C:\Users\n.terentyev\Documents\Graduation\G_Service\obj\Debug\net6.0\G_Service.dll
+C:\Users\n.terentyev\Documents\Graduation\G_Service\obj\Debug\net6.0\refint\G_Service.dll
+C:\Users\n.terentyev\Documents\Graduation\G_Service\obj\Debug\net6.0\G_Service.pdb
+C:\Users\n.terentyev\Documents\Graduation\G_Service\obj\Debug\net6.0\ref\G_Service.dll

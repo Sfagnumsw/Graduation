@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vTFa8a+XlIm5huLuEqJAtG+I6uvtYNxCbuFYGrWBvz4=",
+  "Hash": "fkd4Ba957B1f6pnb2Q9eBBi+RSi7cHKjDKEpflLcxwk=",
   "Source": "GraduationTarget",
   "BasePath": "_content/GraduationTarget",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\obj\\Debug\\net6.0\\scopedcss\\bundle\\GraduationTarget.styles.css",
-      "SourceId": "GraduationTarget",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/GraduationTarget",
-      "RelativePath": "GraduationTarget.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\obj\\Debug\\net6.0\\scopedcss\\bundle\\GraduationTarget.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\GraduationTarget.bundle.scp.css",
-      "SourceId": "GraduationTarget",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/GraduationTarget",
-      "RelativePath": "GraduationTarget.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\GraduationTarget.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\wwwroot\\css\\site.css",
       "SourceId": "GraduationTarget",

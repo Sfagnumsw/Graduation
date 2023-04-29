@@ -12,5 +12,6 @@ namespace G_DAL.Entity
         public User Performer { get; set; }
         public DateTime Start { get; set; }
         public DateTime? End { get; set; }
+        public Status Status { get; set; }
     }
 }
