@@ -8,6 +8,6 @@ namespace G_DAL.Entity
 {
     public class Team : BaseEntity
     {
-
+       public List<User> Users = new List<User>();
     }
 }

@@ -9,7 +9,7 @@ namespace G_Service.Interface
 {
     public interface IBaseService<T>
     {
-        Task<T> Create(T model);
+        System.Threading.Tasks.Task<T> Create(T model);
         System.Threading.Tasks.Task Remove(int objId);
         Task<T> Get(int objId);
         Task<IEnumerable<T>> GetAll();
