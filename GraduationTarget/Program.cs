@@ -1,6 +1,10 @@
 using G_DAL;
 using G_DAL.Entity;
+using G_DAL.Interface;
+using G_DAL.Repository;
 using G_DAL.ViewModel;
+using G_Service.Interface;
+using G_Service.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Identity;
@@ -22,13 +26,19 @@ namespace GraduationTarget
             builder.Logging.SetMinimumLevel(LogLevel.Trace);
             builder.Logging.AddNLog();
 
-            builder.Services.AddDbContext<G_ContextDB>(options => options.UseSqlServer(Configuration.GetConnectionString("Default"), a => a.MigrationsAssembly("GraduationTarget")));
+            builder.Services.AddDbContext<G_ContextDB>(options => options.UseSqlServer("Server=localhost;Database=GradDB;User Id=sa;Password=Qwerty12345;", a => a.MigrationsAssembly("GraduationTarget")));
             builder.Services.AddIdentity<User, Role>(opt =>
             {
                 opt.Password.RequiredLength = 5;
                 opt.User.RequireUniqueEmail = true;
                 opt.SignIn.RequireConfirmedEmail = false;
             }).AddEntityFrameworkStores<G_ContextDB>();
+
+            builder.Services.ConfigureApplicationCookie(opt => opt.LoginPath = "/User/SignIn");
+
+            builder.Services.AddScoped<IBaseService<G_DAL.Entity.Task>, TaskService>();
+            builder.Services.AddScoped<IBaseAction<G_DAL.Entity.Task>, TaskRepos>();
+            builder.Services.AddScoped<IBaseUserService, UserService>();
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();

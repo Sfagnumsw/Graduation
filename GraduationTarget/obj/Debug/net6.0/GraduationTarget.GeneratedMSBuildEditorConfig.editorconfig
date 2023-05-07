@@ -28,12 +28,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhlYWRlclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/n.terentyev/Documents/Graduation/GraduationTarget/Views/Shared/ScriptPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNjcmlwdFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/n.terentyev/Documents/Graduation/GraduationTarget/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/n.terentyev/Documents/Graduation/GraduationTarget/Views/Task/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/n.terentyev/Documents/Graduation/GraduationTarget/Views/Task/GetMyTasks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xHZXRNeVRhc2tzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/n.terentyev/Documents/Graduation/GraduationTarget/Views/Task/TaskPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xUYXNrUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/n.terentyev/Documents/Graduation/GraduationTarget/Views/Team/MyTeam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxNeVRlYW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/n.terentyev/Documents/Graduation/GraduationTarget/Views/User/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/n.terentyev/Documents/Graduation/GraduationTarget/Views/User/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTaWduSW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/n.terentyev/Documents/Graduation/GraduationTarget/Views/_ViewImports.cshtml]

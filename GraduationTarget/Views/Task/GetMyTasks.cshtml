@@ -1,0 +1,20 @@
+﻿@model IEnumerable<G_DAL.Entity.Task>
+
+<table class="">
+    <caption>Мои задачи</caption>
+    <thead>
+        <tr><th>Id</th><th>Название</th><th>Описание</th><th>Назначил</th><th>Срок выполнения</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr class="task-row">
+                <td class="">@i.Id</td>
+                <td>@i.Name</td>
+                <td>@i.Description</td>
+                <td>@i.Creator.UserName</td>
+                <td>@i.End</td>
+            </tr>
+        }
+    </tbody>
+</table>

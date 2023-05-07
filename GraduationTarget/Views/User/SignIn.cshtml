@@ -1,0 +1,19 @@
+﻿@model G_DAL.ViewModel.UserModel;
+
+<div class="registration">
+    <form asp-action="SignIn" asp-controller="User">
+        <div asp-validation-summary="All"></div>
+        <div>
+            <span asp-validation-for="Email"></span>
+            <input type="email" asp-for="Email" placeholder="Почта" class="">
+        </div>
+        <div>
+            <span asp-validation-for="Password"></span>
+            <input type="password" asp-for="Password" placeholder="Пароль" class="">
+        </div>
+        <div>
+            <input type="submit" value="Войти" class="">
+        </div>
+        <a asp-action="Create" asp-controller="User">Регистрация</a>
+    </form>
+</div>

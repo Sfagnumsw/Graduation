@@ -20,9 +20,8 @@ namespace G_Service.Service
             _repos = repos;
         }
 
-        public async Task<Project> Create(Project model)
+        public async System.Threading.Tasks.Task Create(Project model)
         {
-            Project project = null;
             try
             {
                 var projects = await _repos.GetAll();
@@ -30,13 +29,12 @@ namespace G_Service.Service
                 {
                     throw new Exception("Указанная команда уже работает над другим проектом");
                 }
-                project = await _repos.Create(model);
+                await _repos.Create(model);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
             }
-            return project;
         }
 
         public async Task<Project> Get(int objId)

@@ -20,9 +20,8 @@ namespace G_Service.Service
             _repos = repos;
         }
 
-        public async Task<Stage> Create(Stage model)
+        public async System.Threading.Tasks.Task Create(Stage model)
         {
-            Stage stage = null;
             try
             {
                 var stages = await _repos.GetAll();
@@ -30,13 +29,12 @@ namespace G_Service.Service
                 {
                     throw new Exception("Такая стадия проекта уже существует");
                 }
-                stage = await _repos.Create(model);
+                await _repos.Create(model);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
             }
-            return stage;
         }
 
         public async Task<Stage> Get(int objId)

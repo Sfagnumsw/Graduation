@@ -1,0 +1,26 @@
+﻿@model G_DAL.ViewModel.TaskViewModel
+
+<div>
+    <form asp-action="Create" asp-controller="Task" method="post">
+        <div asp-validation-summary="All"></div>
+        <div>
+            <span asp-validation-for="Name"></span>
+            <input asp-for="Name" placeholder="Название" class="" />
+        </div>
+        <div>
+            <span asp-validation-for="Description"></span>
+            <input asp-for="Description" placeholder="Описание" class="">
+        </div>
+        <div>
+            <span asp-validation-for="PerformerMail"></span>
+            <input asp-for="PerformerMail" placeholder="Исполнитель" class="">
+        </div>
+        <div>
+            <span asp-validation-for="End"></span>
+            <input asp-for="End" placeholder="Срок выполнения" class="" />
+        </div>
+        <div>
+            <input type="submit" value="Создать" class="" />
+        </div>
+    </form>
+</div>

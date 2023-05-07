@@ -43,34 +43,6 @@ namespace G_DAL
                 Name = "curator",
             });
 
-            modelBuilder.Entity<Stage>().HasData(new Stage
-            {
-                Id = 1,
-                Name ="Проектирование",
-                Description = "Стадия проектирования"
-            });
-
-            modelBuilder.Entity<Stage>().HasData(new Stage
-            {
-                Id = 2,
-                Name = "Разработка",
-                Description = "Стадия разработки"
-            });
-
-            modelBuilder.Entity<Stage>().HasData(new Stage
-            {
-                Id = 3,
-                Name = "Тестирование",
-                Description = "Стадия тестирования"
-            });
-
-            modelBuilder.Entity<Stage>().HasData(new Stage
-            {
-                Id = 4,
-                Name = "Завершение",
-                Description = "Стадия завершения"
-            });
-
             modelBuilder.Entity<Status>().HasData(new Status
             {
                 Id = 1,
@@ -93,6 +65,34 @@ namespace G_DAL
                 Name = "Отстает",
                 Description = "Сроки стадии проекта сорваны",
                 Color = "#FF0000"
+            });
+
+            modelBuilder.Entity<Stage>().HasData(new Stage
+            {
+                Id = 1,
+                Name ="Проектирование",
+                Description = "Стадия проектирования",
+            });
+
+            modelBuilder.Entity<Stage>().HasData(new Stage
+            {
+                Id = 2,
+                Name = "Разработка",
+                Description = "Стадия разработки"
+            });
+
+            modelBuilder.Entity<Stage>().HasData(new Stage
+            {
+                Id = 3,
+                Name = "Тестирование",
+                Description = "Стадия тестирования"
+            });
+
+            modelBuilder.Entity<Stage>().HasData(new Stage
+            {
+                Id = 4,
+                Name = "Завершение",
+                Description = "Стадия завершения"
             });
 
             modelBuilder.Entity<User>().HasData(new User

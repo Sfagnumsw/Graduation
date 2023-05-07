@@ -20,9 +20,8 @@ namespace G_Service.Service
             _repos = repos;
         }
 
-        public async Task<Status> Create(Status obj)
+        public async System.Threading.Tasks.Task Create(Status obj)
         {
-            Status status = null;
             try
             {
                 var statuses = await _repos.GetAll();
@@ -30,13 +29,12 @@ namespace G_Service.Service
                 {
                     throw new Exception("Такой статус уже существует");
                 }
-                status = await _repos.Create(obj);
+                await _repos.Create(obj);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
             }
-            return status;
         }
 
         public async Task<Status> Get(int objId)

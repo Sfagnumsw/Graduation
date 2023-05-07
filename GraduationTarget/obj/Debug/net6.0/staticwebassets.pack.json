@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\wwwroot\\js\\ActiveRow.js",
+      "PackagePath": "staticwebassets\\js\\ActiveRow.js"
+    },
+    {
+      "Id": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\wwwroot\\js\\CompleteTask.js",
+      "PackagePath": "staticwebassets\\js\\CompleteTask.js"
+    },
+    {
       "Id": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },

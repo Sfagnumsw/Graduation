@@ -9,7 +9,7 @@ namespace G_DAL.Interface
 {
     public interface IBaseAction<T> where T : BaseEntity
     {
-        System.Threading.Tasks.Task<T> Create(T obj);
+        System.Threading.Tasks.Task Create(T obj);
         System.Threading.Tasks.Task<T> Get(int objId);
         System.Threading.Tasks.Task<IEnumerable<T>> GetAll();
         System.Threading.Tasks.Task Remove(int objId);

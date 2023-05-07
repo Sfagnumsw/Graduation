@@ -7,6 +7,10 @@ using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
+using G_DAL;
+using Microsoft.EntityFrameworkCore;
 
 namespace G_Service.Service
 {
@@ -16,20 +20,21 @@ namespace G_Service.Service
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly JWTSettings _settings;
-        public UserService(ILogger<UserService> logger, UserManager<User> user, SignInManager<User> data, JWTSettings settings)
+        private readonly G_ContextDB _contextDB;
+        public UserService(ILogger<UserService> logger, UserManager<User> user, SignInManager<User> data, IOptions<JWTSettings> settings, G_ContextDB contextDB)
         {
             _logger = logger;
             _userManager = user;
             _signInManager = data;
-            _settings = settings;
+            _settings = settings.Value;
+            _contextDB = contextDB;
         }
 
         public async System.Threading.Tasks.Task Create(UserModel model)
         {
-            User user = null;
             try
             {
-                user = new User()
+                User user = new User()
                 {
                     UserName = model.UserName,
                     Email = model.Email,
@@ -79,12 +84,12 @@ namespace G_Service.Service
             return user;
         }
 
-        public async Task<IEnumerable<User>> GetInRole(string roleName)
+        public async Task<IEnumerable<User>> GetInTeam(int teamId)
         {
             IList<User> users = new List<User>();
             try
             {
-                users = await _userManager.GetUsersInRoleAsync(roleName);
+                users = await _contextDB.Users.Where(i => i.Team.Id == teamId).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -133,6 +138,13 @@ namespace G_Service.Service
             {
                 _logger.LogError(ex.Message);
             }
+        }
+
+        public async Task<User> GetCurrentUser() //текущий пользователь
+        {
+            ClaimsPrincipal claims = _signInManager.Context.User;
+            User user = await _userManager.GetUserAsync(claims);
+            return user;
         }
     }
 }

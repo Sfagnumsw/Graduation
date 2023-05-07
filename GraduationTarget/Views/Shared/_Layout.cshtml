@@ -1,16 +1,16 @@
-﻿<!DOCTYPE html>
-
-<html>
+﻿<html>
 <head>
-    <meta name="viewport" content="width=device-width" />
     @await Html.PartialAsync("CssPartial")
 </head>
 <body>
-    <div>
-        @await Html.PartialAsync("HeaderPartial")
-        <div>
+    <div class="main-block">
+        <div class="header-block">
+            @await Html.PartialAsync("HeaderPartial")
+        </div>
+        <div class="render-block">
             @RenderBody()
         </div>
     </div>
+    @await Html.PartialAsync("ScriptPartial")
 </body>
 </html>

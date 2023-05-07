@@ -19,18 +19,16 @@ namespace G_Service.Service
             _repos = repos;
         }
 
-        public async Task<G_DAL.Entity.Task> Create(G_DAL.Entity.Task obj)
+        public async System.Threading.Tasks.Task Create(G_DAL.Entity.Task obj)
         {
-            G_DAL.Entity.Task task = null;
             try
             {
-                task = await _repos.Create(obj);
+                await _repos.Create(obj);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
             }
-            return task;
         }
 
         public async Task<G_DAL.Entity.Task> Get(int objId)

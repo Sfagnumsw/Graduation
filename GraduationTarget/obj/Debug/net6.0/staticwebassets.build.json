@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "M0y8CLhFxhL0BneIBW/VO7cRuqulIREPko5sl8TYdgs=",
+  "Hash": "pKHNRssNDsMCsEwpb29I4OcFmmA1RbhDvcQhdsiokaA=",
   "Source": "GraduationTarget",
   "BasePath": "_content/GraduationTarget",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\wwwroot\\js\\ActiveRow.js",
+      "SourceId": "GraduationTarget",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\wwwroot\\",
+      "BasePath": "_content/GraduationTarget",
+      "RelativePath": "js/ActiveRow.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\ActiveRow.js"
+    },
+    {
+      "Identity": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\wwwroot\\js\\CompleteTask.js",
+      "SourceId": "GraduationTarget",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\wwwroot\\",
+      "BasePath": "_content/GraduationTarget",
+      "RelativePath": "js/CompleteTask.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\CompleteTask.js"
     },
     {
       "Identity": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\wwwroot\\lib\\jquery\\dist\\jquery.js",

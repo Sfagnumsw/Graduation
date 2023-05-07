@@ -1,12 +1,50 @@
-﻿
-<div class="headerContainer">
-    <div>
-    <a asp-controller="Home" asp-action="Index">Главная</a>
-    <a asp-controller="" asp-action="">Мои задачи</a>
-    <a asp-controller="" asp-action="">Текущий проект</a>
-    <a asp-controller="" asp-action="">Команда</a>
-    </div>
-    <div>
-        <a asp-controller="" asp-action="">Юзер</a>
-    </div>
-</div>
+﻿<div class="area"></div>
+<nav class="main-menu">
+    <ul>
+        <li>
+            <a asp-action="Index" asp-controller="Home">
+                <i class="fa fa-home fa-2x"></i>
+                <span class="nav-text">
+                    Главная страница
+                </span>
+            </a>
+
+        </li>
+        <li>
+            <a asp-action="TaskPage" asp-controller="Task">
+                <i class="fa fa-book fa-2x"></i>
+                <span class="nav-text">
+                    Мои задачи
+                </span>
+            </a>
+        </li>
+        <li class="has-subnav">
+            <a asp-action="GetMyTeam" asp-controller="Team">
+                <i class="fa fa-comments fa-2x"></i>
+                <span class="nav-text">
+                    Команда
+                </span>
+            </a>
+
+        </li>
+        <li>
+            <a asp-action="GetMyProject" asp-controller="Project">
+                <i class="fa fa-film fa-2x"></i>
+                <span class="nav-text">
+                    Проект
+                </span>
+            </a>
+        </li>
+    </ul>
+
+    <ul class="logout">
+        <li>
+            <a asp-action="LogOut" asp-controller="User">
+                <i class="fa fa-power-off fa-2x"></i>
+                <span class="nav-text">
+                    Выход
+                </span>
+            </a>
+        </li>
+    </ul>
+</nav>

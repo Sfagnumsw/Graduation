@@ -1,7 +1,7 @@
 ﻿@model G_DAL.ViewModel.UserModel;
 
 <div class="registration">
-    <form id="registration-form">
+    <form asp-action="Create" asp-controller="User" class="">
         <div asp-validation-summary="All"></div>
         <div>
             <span asp-validation-for="UserName"></span>
@@ -9,15 +9,15 @@
         </div>
         <div>
             <span asp-validation-for="Email"></span>
-            <input type="password" asp-for="Password" placeholder="Пароль" class="txt-input">
+            <input type="email" asp-for="Email" placeholder="Почта" class="txt-input">
         </div>
         <div>
             <span asp-validation-for="Password"></span>
             <input type="password" asp-for="Password" placeholder="Пароль" class="txt-input">
         </div>
         <div>
-            <input type="button" value="Войти" class="registration-button">
+            <input type="submit" value="Регистрация" class="registration-button">
         </div>
-        <a asp-action="Create" asp-controller="User">Регистрация</a>
+        <a asp-action="SignIn" asp-controller="User">Вход</a>
     </form>
 </div>

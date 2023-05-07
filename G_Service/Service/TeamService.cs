@@ -20,18 +20,16 @@ namespace G_Service.Service
             _repos = repos;
         }
 
-        public async Task<Team> Create(Team model)
+        public async System.Threading.Tasks.Task Create(Team model)
         {
-            Team team = null;
             try
             {
-                team = await _repos.Create(model);
+                await _repos.Create(model);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
             }
-            return team;
         }
 
         public async Task<Team> Get(int objId)

@@ -4,6 +4,6 @@ namespace G_DAL.Entity
 {
     public class User : IdentityUser<int>
     {
-        public Team Team { get; set; }
+        public Team? Team { get; set; }
     }
 }

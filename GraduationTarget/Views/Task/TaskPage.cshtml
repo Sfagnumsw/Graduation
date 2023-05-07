@@ -1,0 +1,18 @@
+﻿@model IEnumerable<G_DAL.Entity.Task>
+
+
+<div>
+    <a asp-action="Create" asp-controller="Task">Создать</a>
+    <a class="complete-button">Выполнить</a>
+</div>
+@{
+    if (Model.Any())
+    {
+        @await Html.PartialAsync("GetMyTasks", Model)
+        ;
+    }
+    else
+    {
+        <p>Вас пока не назначили исполнителем задач</p>
+    }
+}

@@ -10,13 +10,15 @@ using System.Threading.Tasks;
 
 namespace G_Service.Interface
 {
-    internal interface IBaseUserService
+    public interface IBaseUserService
     {
         System.Threading.Tasks.Task Create(UserModel model);
         Task<User> Get(string email);
-        Task<IEnumerable<User>> GetInRole(string roleName);
+        Task<IEnumerable<User>> GetInTeam(int teamId);
         Task<User> GetCurrent();
         System.Threading.Tasks.Task<string> SignIn(UserModel model);
         System.Threading.Tasks.Task SignOut();
+        System.Threading.Tasks.Task<User> GetCurrentUser();
+
     }
 }
