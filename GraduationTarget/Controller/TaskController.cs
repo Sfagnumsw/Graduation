@@ -33,11 +33,11 @@ namespace GraduationTarget.Controller
                 Name = model.Name,
                 Description = model.Description,
                 End = model.End,
-                Creator = creator,
-                Performer = performer
+                CreatorMail = creator.Email,
+                PerformerMail = performer.Email
             };
             await _serviceTask.Create(task);
-            return View();
+            return RedirectToAction("TaskPage");
         }
 
         [Authorize]
@@ -46,8 +46,15 @@ namespace GraduationTarget.Controller
         {
             var user = await _serviceUser.GetCurrentUser();
             var allTasks = await _serviceTask.GetAll();
-            var myTasks = allTasks.Where(i => i.Performer.Id == user.Id);
-            return View(myTasks);
+            try
+            {
+                var myTasks = allTasks.Where(i => i.PerformerMail == user.Email);
+                return View(myTasks);
+            }
+            catch (NullReferenceException ex)
+            {
+                return View(new List<G_DAL.Entity.Task>());
+            }
         }
 
         [Authorize]

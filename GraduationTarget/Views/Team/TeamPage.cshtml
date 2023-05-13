@@ -1,0 +1,16 @@
+﻿@model IEnumerable<G_DAL.Entity.User>
+
+<div class="task-panel">
+    <a asp-action="Create" asp-controller="Team">Создать</a>
+    <a asp-action="AddUser" asp-controller="Team">Добавить участника</a>
+</div>
+@{
+    if (Model.Any())
+    {
+        @await Html.PartialAsync("GetMyTeam", Model)
+    }
+    else
+    {
+        <p class="not-any">Вы пока не вступили в команду</p>
+    }
+}

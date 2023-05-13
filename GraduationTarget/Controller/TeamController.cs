@@ -16,15 +16,46 @@ namespace GraduationTarget.Controller
         }
 
         [Authorize]
-        [HttpGet]
-        public async Task<IActionResult> MyTeam()
+        public async Task<IActionResult> TeamPage()
         {
+            IEnumerable <User> friends = new List<User>();
             var teams = await _serviceTeam.GetAll();
             var user = await _userService.GetCurrentUser();
-            var myTeam = teams.Where(i => i.Id == user.Team.Id).FirstOrDefault();
-            var friends = await _userService.GetInTeam(myTeam.Id);
-            ViewBag.Team = myTeam.Name;
+            if(user.TeamId != null)
+            {
+                var myTeam = teams.Where(i => i.Id == user.TeamId).FirstOrDefault();
+                friends = await _userService.GetInTeam(myTeam.Id);
+                ViewBag.Team = myTeam.Name;
+            }
             return View(friends);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Team model)
+        {
+            await _serviceTeam.Create(model);
+            return RedirectToAction("TeamPage");
+        }
+
+        [HttpGet]
+        public IActionResult AddUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddUser(string mail)
+        {
+            var user = await _userService.Get(mail);
+            var current = await _userService.GetCurrentUser();
+            await _userService.AddToTeam(user, current.TeamId.Value);
+            return RedirectToAction("TeamPage");
         }
     }
 }

@@ -16,25 +16,27 @@ namespace GraduationTarget.Controller
         }
 
         [Authorize]
-        public async Task<IActionResult> GetMyProject()
+        public async Task<IActionResult> ProjectPage()
         {
             var user = await _userService.GetCurrent();
             var projects = await _projectService.GetAll();
-            var myProject = projects.FirstOrDefault(i => i.Team.Equals(user.Team));
+            var myProject = projects.FirstOrDefault(i => i.TeamId.Equals(user.TeamId));
             return View(myProject);
         }
 
         [Authorize]
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
         [Authorize]
+        [HttpPost]
         public async Task<IActionResult> Create(Project model)
         {
             await _projectService.Create(model);
-            return View("Index");
+            return RedirectToAction("ProjectPage");
         }
     }
 }

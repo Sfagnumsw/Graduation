@@ -3,6 +3,7 @@ using G_DAL.ViewModel;
 using G_Service.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Win32;
 
 namespace GraduationTarget.Controller
 {
@@ -44,7 +45,7 @@ namespace GraduationTarget.Controller
         public  async Task<IActionResult> LogOut()
         {
             await _userService.SignOut();
-            return Ok();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

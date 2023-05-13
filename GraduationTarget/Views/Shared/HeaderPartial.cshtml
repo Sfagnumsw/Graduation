@@ -19,7 +19,7 @@
             </a>
         </li>
         <li class="has-subnav">
-            <a asp-action="GetMyTeam" asp-controller="Team">
+            <a asp-action="TeamPage" asp-controller="Team">
                 <i class="fa fa-comments fa-2x"></i>
                 <span class="nav-text">
                     Команда
@@ -28,7 +28,7 @@
 
         </li>
         <li>
-            <a asp-action="GetMyProject" asp-controller="Project">
+            <a asp-action="ProjectPage" asp-controller="Project">
                 <i class="fa fa-film fa-2x"></i>
                 <span class="nav-text">
                     Проект
@@ -38,6 +38,14 @@
     </ul>
 
     <ul class="logout">
+        <li>
+            <a asp-action="" asp-controller="">
+                <i class="fa user fa-2x"></i>
+                <span class="nav-text">
+                    Настройки аккаунта
+                </span>
+            </a>
+        </li>
         <li>
             <a asp-action="LogOut" asp-controller="User">
                 <i class="fa fa-power-off fa-2x"></i>

@@ -37,6 +37,7 @@ namespace G_DAL.Repository
         }
 
         public async Task<IEnumerable<G_DAL.Entity.Task>> GetAll() => await _contextDB.Task.ToListAsync();
+        
 
         public async System.Threading.Tasks.Task Remove(int objId)
         {

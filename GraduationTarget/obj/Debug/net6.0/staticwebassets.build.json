@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pKHNRssNDsMCsEwpb29I4OcFmmA1RbhDvcQhdsiokaA=",
+  "Hash": "g7uK+M0fYlv3Gtg4T+XzJB/glmUWyq++SPRPmFufON8=",
   "Source": "GraduationTarget",
   "BasePath": "_content/GraduationTarget",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\wwwroot\\icon\\account.ico",
+      "SourceId": "GraduationTarget",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\wwwroot\\",
+      "BasePath": "_content/GraduationTarget",
+      "RelativePath": "icon/account.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\icon\\account.ico"
     },
     {
       "Identity": "C:\\Users\\n.terentyev\\Documents\\Graduation\\GraduationTarget\\wwwroot\\js\\ActiveRow.js",

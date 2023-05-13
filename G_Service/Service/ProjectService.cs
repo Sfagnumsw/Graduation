@@ -25,7 +25,7 @@ namespace G_Service.Service
             try
             {
                 var projects = await _repos.GetAll();
-                if (projects.Where(i => i.Team == model.Team).Any())
+                if (projects.Where(i => i.TeamId == model.TeamId).Any())
                 {
                     throw new Exception("Указанная команда уже работает над другим проектом");
                 }

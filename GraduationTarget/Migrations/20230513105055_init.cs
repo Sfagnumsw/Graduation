@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GraduationTarget.Migrations
 {
-    public partial class _init : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -37,6 +37,23 @@ namespace GraduationTarget.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Status", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Task",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatorMail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PerformerMail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    End = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Task", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -238,50 +255,21 @@ namespace GraduationTarget.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Task",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CreatorId = table.Column<int>(type: "int", nullable: false),
-                    PerformerId = table.Column<int>(type: "int", nullable: false),
-                    End = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Task", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Task_AspNetUsers_CreatorId",
-                        column: x => x.CreatorId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
-                    table.ForeignKey(
-                        name: "FK_Task_AspNetUsers_PerformerId",
-                        column: x => x.PerformerId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
-                });
-
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "90569756-35b3-4702-bc16-4e36991a779e", "admin", null },
-                    { 2, "7bb6b18c-dfdd-4702-a062-cb0af54c6208", "user", null },
-                    { 3, "3d3f50e6-ecfa-4056-a72b-95582af9541c", "projectOwner", null },
-                    { 4, "26707bcb-e504-454d-8d5c-fd10f23cde69", "curator", null }
+                    { 1, "fb74ec71-9560-4e27-97fd-ee9e40468b14", "admin", null },
+                    { 2, "7e872e68-604a-4ad6-9572-cfba26553771", "user", null },
+                    { 3, "8c4f0bb2-3a9d-4c6d-81ae-2ea8b7ac6169", "projectOwner", null },
+                    { 4, "ed26eff0-4f6a-4288-b178-abbf3b990623", "curator", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TeamId", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, "4c77d1ee-e2db-4896-b59e-166ae8c3572a", "swimming1999@mail.ru", true, false, null, "SWIMMING1999@MAIL.RU", "SFAGNUMX", "AQAAAAEAACcQAAAAEAc7IEGCS2VNlduxAmHMSnMeEq0Bb41w+5hveHbao2ghyWYO636L12Ik11rd/zKjew==", null, false, "", null, false, "sfagnumX" });
+                values: new object[] { 1, 0, "607267ed-8d02-4ea6-9b29-d929ec5274ed", "swimming1999@mail.ru", true, false, null, "SWIMMING1999@MAIL.RU", "SFAGNUMX", "AQAAAAEAACcQAAAAEEwcGYdUaDdDZitd664SbWDTE9CaTnnC8Ox/+mpLgwG+hB43+8SNt5qN9DO/4bTJrQ==", null, false, "", null, false, "sfagnumX" });
 
             migrationBuilder.InsertData(
                 table: "Stage",
@@ -367,16 +355,6 @@ namespace GraduationTarget.Migrations
                 name: "IX_Stage_StatusId",
                 table: "Stage",
                 column: "StatusId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Task_CreatorId",
-                table: "Task",
-                column: "CreatorId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Task_PerformerId",
-                table: "Task",
-                column: "PerformerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -406,16 +384,16 @@ namespace GraduationTarget.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Stage");
-
-            migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Status");
+                name: "Stage");
 
             migrationBuilder.DropTable(
                 name: "Team");
+
+            migrationBuilder.DropTable(
+                name: "Status");
         }
     }
 }

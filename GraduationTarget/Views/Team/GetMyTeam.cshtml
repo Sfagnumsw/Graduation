@@ -1,0 +1,20 @@
+﻿@model IEnumerable<User>
+
+<div class="table-block-team">
+    <table class="table">
+        <caption>@ViewBag.Team</caption>
+        <thead>
+            <tr><th>Id</th><th>Имя</th><th>Почта</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr class="task-row">
+                    <td class="">@i.Id</td>
+                    <td>@i.UserName</td>
+                    <td>@i.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -12,6 +12,7 @@ namespace G_DAL.ViewModel
         public string Name { get; set; }
         public string Description { get; set; }
         public string PerformerMail { get; set; }
+        public string? CreatorName { get; set; }
         public DateTime? End { get; set; }
     }
 }

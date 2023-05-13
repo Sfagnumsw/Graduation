@@ -38,17 +38,13 @@ namespace GraduationTarget.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("StageId")
+                    b.Property<int?>("StageId")
                         .HasColumnType("int");
 
                     b.Property<int?>("TeamId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("StageId");
-
-                    b.HasIndex("TeamId");
 
                     b.ToTable("Project");
                 });
@@ -86,26 +82,30 @@ namespace GraduationTarget.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "90569756-35b3-4702-bc16-4e36991a779e",
-                            Name = "admin"
+                            ConcurrencyStamp = "1074d813-eed7-4e84-8e46-8c87491639f0",
+                            Name = "admin",
+                            NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "7bb6b18c-dfdd-4702-a062-cb0af54c6208",
-                            Name = "user"
+                            ConcurrencyStamp = "03bc1d51-7a68-43af-8d5c-2f440f98ef5f",
+                            Name = "user",
+                            NormalizedName = "USER"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "3d3f50e6-ecfa-4056-a72b-95582af9541c",
-                            Name = "projectOwner"
+                            ConcurrencyStamp = "3bf8cdf3-b395-4cf6-9bdd-6b86e04504cf",
+                            Name = "projectOwner",
+                            NormalizedName = "PROJECTOWNER"
                         },
                         new
                         {
                             Id = 4,
-                            ConcurrencyStamp = "26707bcb-e504-454d-8d5c-fd10f23cde69",
-                            Name = "curator"
+                            ConcurrencyStamp = "c2c26e4a-99c8-4e44-82c9-2fca138cbf1f",
+                            Name = "curator",
+                            NormalizedName = "CURATOR"
                         });
                 });
 
@@ -217,8 +217,9 @@ namespace GraduationTarget.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CreatorId")
-                        .HasColumnType("int");
+                    b.Property<string>("CreatorMail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -231,14 +232,11 @@ namespace GraduationTarget.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PerformerId")
-                        .HasColumnType("int");
+                    b.Property<string>("PerformerMail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CreatorId");
-
-                    b.HasIndex("PerformerId");
 
                     b.ToTable("Task");
                 });
@@ -332,8 +330,6 @@ namespace GraduationTarget.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.HasIndex("TeamId");
-
                     b.ToTable("AspNetUsers", (string)null);
 
                     b.HasData(
@@ -341,13 +337,13 @@ namespace GraduationTarget.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4c77d1ee-e2db-4896-b59e-166ae8c3572a",
+                            ConcurrencyStamp = "df4c1965-d71f-440f-9ecd-3ac46658ce39",
                             Email = "swimming1999@mail.ru",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "SWIMMING1999@MAIL.RU",
                             NormalizedUserName = "SFAGNUMX",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAc7IEGCS2VNlduxAmHMSnMeEq0Bb41w+5hveHbao2ghyWYO636L12Ik11rd/zKjew==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEE76HqM08L2m7MlkX+iyTVdU9OQxSmTMJ3DpACjIr9mu286Qy6gCRejH23Umshr4sA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -465,23 +461,6 @@ namespace GraduationTarget.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("G_DAL.Entity.Project", b =>
-                {
-                    b.HasOne("G_DAL.Entity.Stage", "Stage")
-                        .WithMany()
-                        .HasForeignKey("StageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("G_DAL.Entity.Team", "Team")
-                        .WithMany()
-                        .HasForeignKey("TeamId");
-
-                    b.Navigation("Stage");
-
-                    b.Navigation("Team");
-                });
-
             modelBuilder.Entity("G_DAL.Entity.Stage", b =>
                 {
                     b.HasOne("G_DAL.Entity.Status", "Status")
@@ -489,34 +468,6 @@ namespace GraduationTarget.Migrations
                         .HasForeignKey("StatusId");
 
                     b.Navigation("Status");
-                });
-
-            modelBuilder.Entity("G_DAL.Entity.Task", b =>
-                {
-                    b.HasOne("G_DAL.Entity.User", "Creator")
-                        .WithMany()
-                        .HasForeignKey("CreatorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("G_DAL.Entity.User", "Performer")
-                        .WithMany()
-                        .HasForeignKey("PerformerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Creator");
-
-                    b.Navigation("Performer");
-                });
-
-            modelBuilder.Entity("G_DAL.Entity.User", b =>
-                {
-                    b.HasOne("G_DAL.Entity.Team", "Team")
-                        .WithMany()
-                        .HasForeignKey("TeamId");
-
-                    b.Navigation("Team");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>

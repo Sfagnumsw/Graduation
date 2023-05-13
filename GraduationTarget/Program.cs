@@ -30,6 +30,7 @@ namespace GraduationTarget
             builder.Services.AddIdentity<User, Role>(opt =>
             {
                 opt.Password.RequiredLength = 5;
+                opt.Password.RequireNonAlphanumeric = false;
                 opt.User.RequireUniqueEmail = true;
                 opt.SignIn.RequireConfirmedEmail = false;
             }).AddEntityFrameworkStores<G_ContextDB>();
@@ -38,6 +39,14 @@ namespace GraduationTarget
 
             builder.Services.AddScoped<IBaseService<G_DAL.Entity.Task>, TaskService>();
             builder.Services.AddScoped<IBaseAction<G_DAL.Entity.Task>, TaskRepos>();
+            builder.Services.AddScoped<IBaseService<Team>, TeamService>();
+            builder.Services.AddScoped<IBaseAction<Team>, TeamRepos>();
+            builder.Services.AddScoped<IBaseService<Project>, ProjectService>();
+            builder.Services.AddScoped<IBaseAction<Project>, ProjectRepos>();
+            builder.Services.AddScoped<IBaseService<Status>, StatusService>();
+            builder.Services.AddScoped<IBaseAction<Status>, StatusRepos>();
+            builder.Services.AddScoped<IBaseService<Stage>, StageService>();
+            builder.Services.AddScoped<IBaseAction<Stage>, StageRepos>();
             builder.Services.AddScoped<IBaseUserService, UserService>();
 
             builder.Services.AddControllersWithViews();

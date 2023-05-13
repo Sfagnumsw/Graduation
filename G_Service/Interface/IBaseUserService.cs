@@ -19,6 +19,7 @@ namespace G_Service.Interface
         System.Threading.Tasks.Task<string> SignIn(UserModel model);
         System.Threading.Tasks.Task SignOut();
         System.Threading.Tasks.Task<User> GetCurrentUser();
+        System.Threading.Tasks.Task AddToTeam(User user, int teamID);
 
     }
 }

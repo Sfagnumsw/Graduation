@@ -1,0 +1,19 @@
+﻿@model G_DAL.Entity.Team
+
+<div class="login-box">
+    <p>Команда</p>
+    <form asp-action="Create" asp-controller="Team" method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="user-box">
+            <span asp-validation-for="Name"></span>
+            <input asp-for="Name" placeholder="Название"/>
+        </div>
+        <div class="user-box">
+            <span asp-validation-for="Description"></span>
+            <input asp-for="Description" placeholder="Описание">
+        </div>
+        <div class="button-box">
+            <input type="submit" value="Создать" class="button" />
+        </div>
+    </form>
+</div>

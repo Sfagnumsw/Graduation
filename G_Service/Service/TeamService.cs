@@ -1,6 +1,7 @@
 ﻿using G_DAL.Entity;
 using G_DAL.Interface;
 using G_Service.Interface;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,14 @@ namespace G_Service.Service
     {
         private readonly ILogger<TeamService> _logger;
         private readonly IBaseAction<Team> _repos;
-        public TeamService(ILogger<TeamService> logger, IBaseAction<Team> repos)
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
+        public TeamService(ILogger<TeamService> logger, IBaseAction<Team> repos, UserManager<User> userManager, SignInManager<User> signInManager)
         {
             _logger = logger;
             _repos = repos;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public async System.Threading.Tasks.Task Create(Team model)
@@ -25,6 +30,12 @@ namespace G_Service.Service
             try
             {
                 await _repos.Create(model);
+                var teams = await _repos.GetAll();
+                var currentTeam = teams.FirstOrDefault(i => i.Name == model.Name);
+                var claims = _signInManager.Context.User;
+                var user = await _userManager.GetUserAsync(claims);
+                user.TeamId = currentTeam.Id;
+                await _userManager.UpdateAsync(user);
             }
             catch (Exception ex)
             {

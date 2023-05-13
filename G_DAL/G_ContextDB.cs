@@ -23,24 +23,28 @@ namespace G_DAL
             {
                 Id = 1,
                 Name = "admin",
+                NormalizedName = "ADMIN"
             });
 
             modelBuilder.Entity<Role>().HasData(new Role
             {
                 Id = 2,
                 Name = "user",
+                NormalizedName = "USER"
             });
 
             modelBuilder.Entity<Role>().HasData(new Role
             {
                 Id = 3,
                 Name = "projectOwner",
+                NormalizedName = "PROJECTOWNER"
             });
 
             modelBuilder.Entity<Role>().HasData(new Role
             {
                 Id = 4,
                 Name = "curator",
+                NormalizedName = "CURATOR"
             });
 
             modelBuilder.Entity<Status>().HasData(new Status

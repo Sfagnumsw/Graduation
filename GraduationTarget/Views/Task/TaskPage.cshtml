@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<G_DAL.Entity.Task>
 
 
-<div>
+<div class="task-panel">
     <a asp-action="Create" asp-controller="Task">Создать</a>
     <a class="complete-button">Выполнить</a>
 </div>
@@ -9,10 +9,9 @@
     if (Model.Any())
     {
         @await Html.PartialAsync("GetMyTasks", Model)
-        ;
     }
     else
     {
-        <p>Вас пока не назначили исполнителем задач</p>
+        <p class="not-any">Вас пока не назначили исполнителем задач</p>
     }
 }

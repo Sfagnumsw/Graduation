@@ -1,0 +1,16 @@
+﻿@model G_DAL.Entity.Project
+
+<div class="task-panel">
+    <a asp-action="Create" asp-controller="Project">Создать</a>
+</div>
+
+@{
+    if (Model != null)
+    {
+
+    }
+    else
+    {
+        <p class="not-any">У вашей команды нет активных проектов</p>
+    }
+}

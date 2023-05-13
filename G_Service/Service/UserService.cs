@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using G_DAL;
 using Microsoft.EntityFrameworkCore;
+using System.Security;
 
 namespace G_Service.Service
 {
@@ -89,7 +90,7 @@ namespace G_Service.Service
             IList<User> users = new List<User>();
             try
             {
-                users = await _contextDB.Users.Where(i => i.Team.Id == teamId).ToListAsync();
+                users = await _contextDB.Users.Where(i => i.TeamId == teamId).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -145,6 +146,15 @@ namespace G_Service.Service
             ClaimsPrincipal claims = _signInManager.Context.User;
             User user = await _userManager.GetUserAsync(claims);
             return user;
+        }
+
+        public async System.Threading.Tasks.Task AddToTeam(User user, int teamId)
+        {
+            if(user != null)
+            {
+                user.TeamId = teamId;
+                await _userManager.UpdateAsync(user);
+            }
         }
     }
 }
