@@ -14,21 +14,26 @@ namespace G_Service.Service
     {
         private readonly ILogger<ProjectService> _logger;
         private readonly IBaseAction<Project> _repos;
-        public ProjectService(ILogger<ProjectService> logger, IBaseAction<Project> repos)
+        private readonly IBaseUserService _userService;
+        public ProjectService(ILogger<ProjectService> logger, IBaseAction<Project> repos, IBaseUserService userService)
         {
             _logger = logger;
             _repos = repos;
+            _userService = userService;
         }
 
         public async System.Threading.Tasks.Task Create(Project model)
         {
             try
             {
+                var user = await _userService.GetCurrent();
+                model.TeamId = user.TeamId;
                 var projects = await _repos.GetAll();
                 if (projects.Where(i => i.TeamId == model.TeamId).Any())
                 {
                     throw new Exception("Указанная команда уже работает над другим проектом");
                 }
+                model.StageId = 1;
                 await _repos.Create(model);
             }
             catch (Exception ex)

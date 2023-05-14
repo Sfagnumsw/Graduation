@@ -8,6 +8,6 @@ namespace G_DAL.Entity
 {
     public class Stage : BaseEntity
     {
-        public Status? Status { get; set; }
+        public int StatusId { get; set; }
     }
 }

@@ -1,0 +1,15 @@
+﻿@model G_DAL.ViewModel.ProjectViewModel
+
+<div class="project-block">
+    <div class="first-block">
+        <h2>@Model.Name</h2>
+        <p>@Model.Description</p>
+        <span>Текущая стадия проекта: @Model.Stage</span>
+        <br>
+        <span style="color: @Model.Color">Состояние: @Model.Status</span>
+    </div>
+    <div class="second-block">
+        <p>-@Model.StageDescription</p>
+        <p>-@Model.StatusDescription</p>
+    </div>
+</div>

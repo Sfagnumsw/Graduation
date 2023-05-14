@@ -1,4 +1,4 @@
-﻿@model G_DAL.Entity.Project
+﻿@model G_DAL.ViewModel.ProjectViewModel
 
 <div class="task-panel">
     <a asp-action="Create" asp-controller="Project">Создать</a>
@@ -7,7 +7,7 @@
 @{
     if (Model != null)
     {
-
+        @await Html.PartialAsync("GetMyProject", Model)
     }
     else
     {

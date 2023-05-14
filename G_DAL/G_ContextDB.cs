@@ -76,27 +76,31 @@ namespace G_DAL
                 Id = 1,
                 Name ="Проектирование",
                 Description = "Стадия проектирования",
+                StatusId = 1
             });
 
             modelBuilder.Entity<Stage>().HasData(new Stage
             {
                 Id = 2,
                 Name = "Разработка",
-                Description = "Стадия разработки"
+                Description = "Стадия разработки",
+                StatusId = 1
             });
 
             modelBuilder.Entity<Stage>().HasData(new Stage
             {
                 Id = 3,
                 Name = "Тестирование",
-                Description = "Стадия тестирования"
+                Description = "Стадия тестирования",
+                StatusId = 1
             });
 
             modelBuilder.Entity<Stage>().HasData(new Stage
             {
                 Id = 4,
                 Name = "Завершение",
-                Description = "Стадия завершения"
+                Description = "Стадия завершения",
+                StatusId = 1
             });
 
             modelBuilder.Entity<User>().HasData(new User

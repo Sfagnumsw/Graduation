@@ -82,28 +82,28 @@ namespace GraduationTarget.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "1074d813-eed7-4e84-8e46-8c87491639f0",
+                            ConcurrencyStamp = "dc05fbe4-780d-46b6-bacf-bfcc155751b2",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "03bc1d51-7a68-43af-8d5c-2f440f98ef5f",
+                            ConcurrencyStamp = "534dd4d8-3419-4c4e-99be-902b88b11f60",
                             Name = "user",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "3bf8cdf3-b395-4cf6-9bdd-6b86e04504cf",
+                            ConcurrencyStamp = "aeb766eb-4812-434c-afc3-1ff8a4507b30",
                             Name = "projectOwner",
                             NormalizedName = "PROJECTOWNER"
                         },
                         new
                         {
                             Id = 4,
-                            ConcurrencyStamp = "c2c26e4a-99c8-4e44-82c9-2fca138cbf1f",
+                            ConcurrencyStamp = "083743c2-d6a1-4cab-aa5a-599611a0b756",
                             Name = "curator",
                             NormalizedName = "CURATOR"
                         });
@@ -125,12 +125,10 @@ namespace GraduationTarget.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("StatusId")
+                    b.Property<int>("StatusId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("StatusId");
 
                     b.ToTable("Stage");
 
@@ -139,25 +137,29 @@ namespace GraduationTarget.Migrations
                         {
                             Id = 1,
                             Description = "Стадия проектирования",
-                            Name = "Проектирование"
+                            Name = "Проектирование",
+                            StatusId = 1
                         },
                         new
                         {
                             Id = 2,
                             Description = "Стадия разработки",
-                            Name = "Разработка"
+                            Name = "Разработка",
+                            StatusId = 1
                         },
                         new
                         {
                             Id = 3,
                             Description = "Стадия тестирования",
-                            Name = "Тестирование"
+                            Name = "Тестирование",
+                            StatusId = 1
                         },
                         new
                         {
                             Id = 4,
                             Description = "Стадия завершения",
-                            Name = "Завершение"
+                            Name = "Завершение",
+                            StatusId = 1
                         });
                 });
 
@@ -337,13 +339,13 @@ namespace GraduationTarget.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "df4c1965-d71f-440f-9ecd-3ac46658ce39",
+                            ConcurrencyStamp = "83c24770-1233-4efd-b8fd-7a41192cb0d0",
                             Email = "swimming1999@mail.ru",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "SWIMMING1999@MAIL.RU",
                             NormalizedUserName = "SFAGNUMX",
-                            PasswordHash = "AQAAAAEAACcQAAAAEE76HqM08L2m7MlkX+iyTVdU9OQxSmTMJ3DpACjIr9mu286Qy6gCRejH23Umshr4sA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFM7e5rYcBR//IT2QCq6HKb3Epcr24a3RbLu+qZb+R2DbdcM3byJPMxXYCJ10vyVJA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -459,15 +461,6 @@ namespace GraduationTarget.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("G_DAL.Entity.Stage", b =>
-                {
-                    b.HasOne("G_DAL.Entity.Status", "Status")
-                        .WithMany()
-                        .HasForeignKey("StatusId");
-
-                    b.Navigation("Status");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
