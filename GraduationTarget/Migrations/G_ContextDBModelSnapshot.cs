@@ -22,6 +22,31 @@ namespace GraduationTarget.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("G_DAL.Entity.Notion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserMail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Notion");
+                });
+
             modelBuilder.Entity("G_DAL.Entity.Project", b =>
                 {
                     b.Property<int>("Id")
@@ -82,28 +107,28 @@ namespace GraduationTarget.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "dc05fbe4-780d-46b6-bacf-bfcc155751b2",
+                            ConcurrencyStamp = "b9e7df07-4b96-47aa-9573-00472e9c6e53",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "534dd4d8-3419-4c4e-99be-902b88b11f60",
+                            ConcurrencyStamp = "7a98e3a1-e940-483b-bcf5-ef205801f38e",
                             Name = "user",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "aeb766eb-4812-434c-afc3-1ff8a4507b30",
+                            ConcurrencyStamp = "71516479-b055-4522-9e05-1524ae559691",
                             Name = "projectOwner",
                             NormalizedName = "PROJECTOWNER"
                         },
                         new
                         {
                             Id = 4,
-                            ConcurrencyStamp = "083743c2-d6a1-4cab-aa5a-599611a0b756",
+                            ConcurrencyStamp = "28563b12-30fc-40bf-aca0-430982658774",
                             Name = "curator",
                             NormalizedName = "CURATOR"
                         });
@@ -339,13 +364,13 @@ namespace GraduationTarget.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "83c24770-1233-4efd-b8fd-7a41192cb0d0",
+                            ConcurrencyStamp = "fe97c151-5fc9-4967-89bc-99ad3fc81ce7",
                             Email = "swimming1999@mail.ru",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "SWIMMING1999@MAIL.RU",
                             NormalizedUserName = "SFAGNUMX",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFM7e5rYcBR//IT2QCq6HKb3Epcr24a3RbLu+qZb+R2DbdcM3byJPMxXYCJ10vyVJA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKpr2nYiPHQ8Z/1gk5y+RIsQSH1OBbEvGNBiGpfhrpifLP8YHNtJoC+cbVTP8cDPrw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

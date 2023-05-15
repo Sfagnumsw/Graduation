@@ -47,6 +47,8 @@ namespace GraduationTarget
             builder.Services.AddScoped<IBaseAction<Status>, StatusRepos>();
             builder.Services.AddScoped<IBaseService<Stage>, StageService>();
             builder.Services.AddScoped<IBaseAction<Stage>, StageRepos>();
+            builder.Services.AddScoped<IBaseService<Notion>, NotionService>();
+            builder.Services.AddScoped<IBaseAction<Notion>, NotionRepos>();
             builder.Services.AddScoped<IBaseUserService, UserService>();
 
             builder.Services.AddControllersWithViews();

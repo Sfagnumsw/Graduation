@@ -1,0 +1,19 @@
+﻿@model Notion
+
+<div class="login-box">
+    <p>Идея</p>
+    <form asp-action="Create" asp-controller="Notion" method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="user-box">
+            <span asp-validation-for="Name"></span>
+            <input asp-for="Name" placeholder="Название" class="" />
+        </div>
+        <div class="user-box">
+            <span asp-validation-for="Description"></span>
+            <input asp-for="Description" placeholder="Описание" class="">
+        </div>
+        <div class="button-box">
+            <input type="submit" value="Опубликовать" class="button" />
+        </div>
+    </form>
+</div>

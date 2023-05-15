@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Notion>
+
+<div class="task-panel">
+    <a asp-action="Create" asp-controller="Notion">Создать</a>
+</div>
+<div class="notion">
+@{
+    if (Model.Any())
+    {
+        foreach(var obj in Model)
+        {
+            <div class="notion-box">
+                <h3>@obj.Name</h3>
+                <p>@obj.Description</p>
+                <span>@obj.UserMail</span>
+            </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+        }
+    }
+    else
+    {
+        <p class="not-any">Пока что никто не добавил новые идеи</p>
+    }
+}
+</div>

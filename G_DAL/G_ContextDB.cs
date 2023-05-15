@@ -14,6 +14,7 @@ namespace G_DAL
         public DbSet<Status> Status { get; set; }
         public DbSet<Entity.Task> Task { get; set; }
         public DbSet<Team> Team { get; set; }
+        public DbSet<Notion> Notion { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
